@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-@Mojo(name = "frshints", defaultPhase = LifecyclePhase.COMPILE)
+@Mojo(name = "generate-hints", defaultPhase = LifecyclePhase.COMPILE)
 public class Plugin extends AbstractMojo {
 
     @Parameter(readonly = true, defaultValue = "${project}")
