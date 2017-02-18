@@ -137,9 +137,9 @@ public class Plugin extends AbstractMojo {
 
     public void execute() throws MojoExecutionException, MojoFailureException {
 
-        String directory = project.getBuild().getSourceDirectory();
+        String directory = new File(project.getBuild().getSourceDirectory()).getParent();
 
-        String metaPath = directory+"/META-INF/resources/";
+        String metaPath = directory+"/resources/META-INF/resources";
         File metaDirectory = new File(metaPath);
 
         String uniqueName = project.getArtifact().getGroupId()+"."+project.getArtifact().getArtifactId();
@@ -153,7 +153,7 @@ public class Plugin extends AbstractMojo {
         try {
 
             if(!metaDirectory.exists())
-                metaDirectory.mkdir();
+                metaDirectory.mkdirs();
 
             if(file.exists())
                 file.delete();
