@@ -139,7 +139,7 @@ public class Plugin extends AbstractMojo {
 
         String directory = project.getBuild().getSourceDirectory();
 
-        String metaPath = directory+"/Hi-INF";
+        String metaPath = directory+"/META-INF/resources/";
         File metaDirectory = new File(metaPath);
 
         String uniqueName = project.getArtifact().getGroupId()+"."+project.getArtifact().getArtifactId();
